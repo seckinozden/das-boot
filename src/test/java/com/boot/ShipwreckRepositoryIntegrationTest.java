@@ -16,16 +16,16 @@ import com.boot.repository.ShipwreckRepository;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ShipwreckRepositoryIntegrationTest {
 
-	@Autowired
-	private ShipwreckRepository repo;
-	
-	@Test
-	public void testFindAll() {
-		List<Shipwreck> list = repo.findAll();
-		assertThat(list.size(), is(greaterThanOrEqualTo(0)));
-	}
-	
+    @Autowired
+    private ShipwreckRepository repo;
+
+    @Test
+    public void testFindAll() {
+        List<Shipwreck> list = repo.findAll();
+        assertThat(list.size(), is(greaterThanOrEqualTo(0)));
+    }
+
 }
